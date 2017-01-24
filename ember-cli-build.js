@@ -8,6 +8,9 @@ module.exports = function(defaults) {
     autoprefixer: {
       browsers: ['last 7 versions'],
       cascade: false
+    },
+    minifyCSS: {
+      enabled: true
     }
   });
 
