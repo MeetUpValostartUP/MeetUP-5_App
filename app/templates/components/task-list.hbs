@@ -1,0 +1,15 @@
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Task</th>
+      <th>Created</th>
+      <th>Deadline</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each tasks as |task|}}
+        {{task-template task=task tagName="tr"}}
+    {{/each}}
+  </tbody>
+</table>
