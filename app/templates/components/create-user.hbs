@@ -1,0 +1,13 @@
+{{#each users as |user|}}
+    {{user.name}}
+{{/each}}
+<br>
+<label for="user_name">{{newUser.name}}</label>
+{{input type="text" name="user_name" value=newUser.name}}
+<br>
+<label for="user_name">{{newUser.password}}</label>
+{{input type="text" name="user_name" value=newUser.password}}
+<br>
+<label for="user_name">{{newUser.avatar}}</label>
+{{input type="text" name="user_name" value=newUser.avatar}}
+<button {{action "createNewUser"}}>Create new user</button>
