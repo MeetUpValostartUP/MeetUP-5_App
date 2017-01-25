@@ -10,6 +10,7 @@ export default Ember.Component.extend({
       message: 'Sorry password or login is incorrect('
   },
   findedUser: null,
+  query_ID: null,
   store: Ember.inject.service(), //this we must do only for access DS from component
   actions: {
     login() {
@@ -19,6 +20,7 @@ export default Ember.Component.extend({
                     (item) => item.get('name') === user.name && item.get('password') === user.password);
         if(typeof findedUser[0] !== "undefined") {
             this.set('findedUser', findedUser[0]);
+            this.set('query_ID', findedUser[0].id)
         }else {
             this.set('user_error_login.status', true);
         }

@@ -4,7 +4,8 @@
       <div class="alert alert-success" role="alert">
         <strong>{{user_create_status.message}}</strong>
       </div>
-      view my task list <button {{action "cancel"}} class="btn btn-warning">logout</button>
+      {{#link-to 'task-list' query_ID class="btn btn-success"}}Wiew my task list{{/link-to}}
+      <button {{action "cancel"}} class="btn btn-warning">logout</button>
     </div>
   {{else}}
     <div class="col-6">
