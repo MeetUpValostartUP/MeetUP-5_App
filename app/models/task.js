@@ -3,9 +3,10 @@ import DS from 'ember-data';
 const {
   Model,
   attr,
-  hasMany
+  belongsTo
 } = DS;
 
 export default Model.extend({
-  title: attr('string')
+  title: attr('string'),
+  autor: belongsTo('user', { async: true, autoSave: true })
 });
