@@ -1,17 +1,26 @@
-<div class="col-4">
-
-
-
-  <div class="form-group">
-    <label for="user_name">Name: {{newUser.name}}</label>
-    {{input type="text" class="form-control" name="user_name" value=newUser.name placeholder="Enter your name"}}
+<div class="row">
+  <div class="col-4">
+    <div class="form-group">
+      {{input type="text" class="form-control" name="user_name" value=newUser.name placeholder="Enter your name"}}
+    </div>
+    <div class="form-group">
+      {{input type="password" class="form-control" name="user_password" value=newUser.password placeholder="Enter your password"}}
+    </div>
+    <div class="form-group">
+      {{ember-filepicker onSelection=(action 'fileSelected') class="btn btn-secondary"}}
+    </div>
+    <button {{action "createNewUser"}} class="btn btn-primary">Create new user</button>
   </div>
-  <div class="form-group">
-    <label for="user_password">Create password</label>
-    {{input type="password" class="form-control" name="user_password" value=newUser.password}}
+  <div class="col-3">
+    {{#if newUser.avatar}}
+      <div class="avatar">
+        <img src="{{newUser.avatar}}" alt="">
+      </div>
+    {{/if}}
+    {{#if newUser.name}}
+      <div class="name">
+        <p>Name: {{newUser.name}}</p>
+      </div>
+    {{/if}}
   </div>
-  <div class="form-group">
-    {{input type="text" class="form-control" name="user_password" value=newUser.password placeholder="Enter your password"}}
-  </div>
-<button {{action "createNewUser"}} class="btn btn-primary">Create new user</button>
 </div>

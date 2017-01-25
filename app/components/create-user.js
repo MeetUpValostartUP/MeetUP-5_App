@@ -6,6 +6,7 @@ export default Ember.Component.extend({
     password: null,
     avatar: null
   },
+  filepicker: Ember.inject.service(),
   store: Ember.inject.service(), //this we must do only for access DS from component
   actions: {
     createNewUser() {
@@ -13,6 +14,9 @@ export default Ember.Component.extend({
           _store = this.get('store'),
           saveUser = _store.createRecord('user', newUser); // Create new record
       saveUser.save(); // Save created record
-    }
+  },
+  fileSelected(file) {
+            this.set('newUser.avatar', file.url);
+        }
   }
 });
