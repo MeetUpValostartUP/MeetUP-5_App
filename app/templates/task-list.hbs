@@ -1,1 +1,15 @@
-{{outlet}}
+<div class="row">
+  <div class="col-7">
+    <h3>Task list</h3>
+    {{#if model.user.tasks}}
+      {{task-list tasks=model.user.tasks}}
+    {{else}}
+      <div class="alert alert-warning" role="alert">
+        <strong>No tasks found :(</strong>
+      </div>
+    {{/if}}
+  </div>
+  <div class="col-5">
+    {{create-task task_id=model.id user=model.user}}
+  </div>
+</div>
