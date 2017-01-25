@@ -6,6 +6,10 @@ export default Ember.Component.extend({
     password: null,
     avatar: null
   },
+  user_create_status: {
+      state: false,
+      message: 'User created!'
+  },
   filepicker: Ember.inject.service(),
   store: Ember.inject.service(), //this we must do only for access DS from component
   actions: {
@@ -14,14 +18,18 @@ export default Ember.Component.extend({
         _store = this.get('store'),
         saveUser = _store.createRecord('user', newUser); // Create new record
       saveUser.save(); // Save created record
+      this.set('user_create_status.state', true);
+      this.set('newUser.name', null);
+      this.set('newUser.password', null);
+      this.set('newUser.avatar', null);
     },
     fileSelected(file) {
       this.set('newUser.avatar', file.url);
     },
     cancel() {
-        this.set('userChoise.state', true);
-        this.set('userChoise.login', false);
-        this.set('userChoise.register', false);
+      this.set('userChoise.state', true);
+      this.set('userChoise.login', false);
+      this.set('userChoise.register', false);
     }
   }
 });
