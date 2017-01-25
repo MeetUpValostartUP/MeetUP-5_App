@@ -8,5 +8,8 @@ const {
 
 export default Model.extend({
   title: attr('string'),
+  created: attr('date'),
+  deadline: attr('date'),
+  comment: attr('string'),
   autor: belongsTo('user', { async: true, autoSave: true })
 });
