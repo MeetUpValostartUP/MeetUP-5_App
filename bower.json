@@ -1,6 +1,8 @@
 {
   "name": "meetup-5-app",
-  "dependencies": {},
+  "dependencies": {
+    "blob-polyfill": "^1.0.20150320"
+  },
   "devDependencies": {
     "bootstrap": "v4.0.0-alpha.6"
   }
