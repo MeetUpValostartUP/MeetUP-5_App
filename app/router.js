@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('welcome-view', {path: '/'});
   this.route('about', {path: '/about'});
+  this.route('task-list', {path: '/tasks'});
 });
 
 export default Router;
