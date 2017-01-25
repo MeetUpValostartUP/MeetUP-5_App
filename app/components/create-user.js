@@ -11,12 +11,17 @@ export default Ember.Component.extend({
   actions: {
     createNewUser() {
       var newUser = this.get('newUser'), // Get user object
-          _store = this.get('store'),
-          saveUser = _store.createRecord('user', newUser); // Create new record
+        _store = this.get('store'),
+        saveUser = _store.createRecord('user', newUser); // Create new record
       saveUser.save(); // Save created record
-  },
-  fileSelected(file) {
-            this.set('newUser.avatar', file.url);
-        }
+    },
+    fileSelected(file) {
+      this.set('newUser.avatar', file.url);
+    },
+    cancel() {
+        this.set('userChoise.state', true);
+        this.set('userChoise.login', false);
+        this.set('userChoise.register', false);
+    }
   }
 });

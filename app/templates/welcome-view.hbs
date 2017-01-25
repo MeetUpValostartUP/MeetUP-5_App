@@ -1,4 +1,13 @@
 <h1>Welcome to ValostartUp meetUp#5</h1>
-<h3>Are you ready? :)</h3>
-{{user-login users=model.users}}
-{{create-user users=model.users}}
+<h3>Hi bro) what do you want?</h3>
+{{#if userChoise.state}}
+  <button {{action "login"}} class="btn btn-primary">Login</button>
+  <button {{action "register"}} class="btn btn-primary">Register</button>
+{{else}}
+  {{#if userChoise.login}}
+    {{user-login users=model.users userChoise=userChoise}}
+  {{/if}}
+  {{#if userChoise.register}}
+    {{create-user users=model.users userChoise=userChoise}}
+  {{/if}}
+{{/if}}

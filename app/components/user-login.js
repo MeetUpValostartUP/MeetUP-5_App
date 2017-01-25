@@ -25,6 +25,11 @@ export default Ember.Component.extend({
     },
     logout() {
         this.set('findedUser', null);
+    },
+    cancel() {
+        this.set('userChoise.state', true);
+        this.set('userChoise.login', false);
+        this.set('userChoise.register', false);
     }
   }
 });

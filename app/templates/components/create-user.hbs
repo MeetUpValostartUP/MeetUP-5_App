@@ -10,6 +10,7 @@
       {{ember-filepicker onSelection=(action 'fileSelected') class="btn btn-secondary"}}
     </div>
     <button {{action "createNewUser"}} class="btn btn-primary">Create new user</button>
+    <button {{action "cancel"}} class="btn btn-primary">Cancel</button>
   </div>
   <div class="col-3">
     {{#if newUser.avatar}}

@@ -1,6 +1,6 @@
 {{#if findedUser}}
     view my task list
-    <button {{action "logout"}} class="btn btn-primary">Login OUT</button>
+    <button {{action "logout"}} class="btn btn-primary">Logout</button>
 {{else}}
 <div class="row">
   <div class="col-4">
@@ -11,6 +11,7 @@
       {{input type="password" class="form-control" name="user_password" value=user.password placeholder="Enter your password"}}
     </div>
     <button {{action "login"}} class="btn btn-primary">Login</button>
+    <button {{action "cancel"}} class="btn btn-primary">Cancel</button>
   </div>
   {{#if user_error_login.status}}
     <p>{{user_error_login.message}}</p>
