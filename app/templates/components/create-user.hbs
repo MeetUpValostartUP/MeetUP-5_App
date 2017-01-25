@@ -1,13 +1,17 @@
-{{#each users as |user|}}
-    {{user.name}}
-{{/each}}
-<br>
-<label for="user_name">{{newUser.name}}</label>
-{{input type="text" name="user_name" value=newUser.name}}
-<br>
-<label for="user_name">{{newUser.password}}</label>
-{{input type="text" name="user_name" value=newUser.password}}
-<br>
-<label for="user_name">{{newUser.avatar}}</label>
-{{input type="text" name="user_name" value=newUser.avatar}}
-<button {{action "createNewUser"}}>Create new user</button>
+<div class="col-4">
+
+
+
+  <div class="form-group">
+    <label for="user_name">Name: {{newUser.name}}</label>
+    {{input type="text" class="form-control" name="user_name" value=newUser.name placeholder="Enter your name"}}
+  </div>
+  <div class="form-group">
+    <label for="user_password">Create password</label>
+    {{input type="password" class="form-control" name="user_password" value=newUser.password}}
+  </div>
+  <div class="form-group">
+    {{input type="text" class="form-control" name="user_password" value=newUser.password placeholder="Enter your password"}}
+  </div>
+<button {{action "createNewUser"}} class="btn btn-primary">Create new user</button>
+</div>
