@@ -32,6 +32,7 @@ export default Ember.Component.extend({
       this.set('userChoise.state', true);
       this.set('userChoise.login', false);
       this.set('userChoise.register', false);
+      this.set('user_create_status.state', false);
     }
   }
 });

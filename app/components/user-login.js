@@ -15,12 +15,11 @@ export default Ember.Component.extend({
   actions: {
     login() {
       var user = this.get('user'), // Get user object
-        _store = this.get('store'),
         findedUser = this.get('users').filter(
                     (item) => item.get('name') === user.name && item.get('password') === user.password);
         if(typeof findedUser[0] !== "undefined") {
             this.set('findedUser', findedUser[0]);
-            this.set('query_ID', findedUser[0].id)
+            this.set('query_ID', findedUser[0].id);
         }else {
             this.set('user_error_login.status', true);
         }
