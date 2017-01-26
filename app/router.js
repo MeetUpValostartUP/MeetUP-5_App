@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('welcome-view', {path: '/'});
   this.route('about', {path: '/about'});
   this.route('task-list', {path: '/tasks/:query_id'});
+  this.route('all-tasks', {path: '/all-tasks'});
 });
 
 export default Router;
