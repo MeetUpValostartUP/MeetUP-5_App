@@ -1,1 +1,26 @@
-{{yield}}
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>{{input value=byKeyword class="btn btn-secondary btn-sm" type="text" placeholder="Search"}}</th>
+      <th></th>
+      <th>
+        <button type="button" name="button" {{action "sortDir" "asc"}} class="btn btn-secondary btn-sm">▲</button>
+        <button type="button" name="button" {{action "sortDir" "desc"}} class="btn btn-secondary btn-sm">▼</button>
+      </th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th>Task</th>
+      <th>Created</th>
+      <th>Deadline</th>
+      <th>Comment</th>
+      <th>Autor</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each sortedTasks as |task|}}
+      {{tasks-template-all task=task tagName="tr"}}
+    {{/each}}
+  </tbody>
+</table>
