@@ -10,8 +10,8 @@ export default Ember.Component.extend({
     console.log(userName);
     keyword = keyword.toLowerCase().trim();
     if (userName.length > 0) {
-      filtered = this.get('tasks').filter((item) => item.get('title').toLowerCase().includes(keyword)
-                                                 && item.get('autor.name') === userName);
+      filtered = this.get('tasks').filter((item) => item.get('title').toLowerCase().includes(keyword) &&
+                                                    item.get('autor.name') === userName);
     } else {
       filtered = this.get('tasks').filter((item) => item.get('title').toLowerCase().includes(keyword));
     }
